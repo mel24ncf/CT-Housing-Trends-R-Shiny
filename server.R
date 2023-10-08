@@ -1,11 +1,3 @@
-#
-# This is the server logic of a Shiny web application. You can run the
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
 library(dplyr)
 library(plotly)
 library(tidyr)
@@ -238,7 +230,6 @@ server <- function(input, output, session) {
                              center = list(lat = 41.6, lon = -72.4), 
                              zoom = 7.8), 
                title = list(text = "Density Map of Connecticut Residential Property Sale Amounts", xref="paper")
-               #               title = list(text = paste("Density Map of Connecticut Residential Property Sale Amounts", year), xref="paper")
         )
     }
   )
@@ -260,8 +251,7 @@ server <- function(input, output, session) {
                             "Sale Amount: $", Sale.Amount, "<br>",
                             "Assessed Value: $", Assessed.Value, "<br>",
                             "Sales Price Ratio:", Sales.Ratio, "<br>",
-                            "Property Type: ", Property.Type) #, "<br>",
-                            #"Residential Type", Residential.Type, "")
+                            "Property Type: ", Property.Type) 
       ) %>%
         layout(mapbox = list(style = "stamen-terrain",
                              center = list(lat = 41.6, lon = -72.4),
